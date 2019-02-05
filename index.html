@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Burger Tree</title>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+    <div id="timer">
+                        
+                        
+                        
+    </div>
+    <script type="text/javascript">
+    var time;
+    function countDown(secs,element){
+            console.log(secs);
+            element.innerHTML = "Please wait for "+secs+"seconds";
+            clearTimeout(time);
+            if(secs<1){
+                element.innerHTML = '<h2>Countdown completed!</h2>';
+                element.innerHTML += '<a href="#">Click here now</a>';
+            }
+            else{
+                secs--;
+                time = setTimeout(function(){countDown(secs , element);} ,1000 );
+            }
+        }
+
+        var element = document.getElementById("timer");
+        countDown(10,element);
+</script>
+
+</body>
+</html>
